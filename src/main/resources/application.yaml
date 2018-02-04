@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/lebrb?user=lebrb&password=piotr}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: ${JWT_SECRET:secret}
+  expiration: ${JWT_EXPIRATION:30}
+
+words-counter:
+  url: ${WORDSCOUNTER_URL:}

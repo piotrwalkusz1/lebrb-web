@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/wordscounter.css}"/>
+    <script th:src="@{/js/bootstrap-fileselect.min.js}"></script>
+    <script th:src="@{/js/wordscounter.js}"></script>
+</head>
+<body>
+<div layout:fragment="below-navbar-content" class="container">
+    <div id="csrf" hidden="hidden" th:text="${_csrf.token}"></div>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="source-language">
+                <option>de</option>
+                <option>en</option>
+                <option>pl</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="destination-language">
+                <option>de</option>
+                <option>en</option>
+                <option>pl</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="file" id="fileselector" />
+        </div>
+        <div class="form-group">
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

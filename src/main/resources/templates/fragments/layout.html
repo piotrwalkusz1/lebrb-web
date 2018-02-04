@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/bootstrap">
+<head>
+    <link rel="stylesheet" th:href="@{css/lebrb-style.css}"/>
+    <link rel="stylesheet" th:href="@{css/custom-forms.css}"/>
+    <script th:defer="true" th:src="@{https://use.fontawesome.com/releases/v5.0.6/js/all.js}"></script>
+</head>
+<body>
+<div layout:fragment="body-content">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="#">LEBRB</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Try it</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Learn more</a>
+                </li>
+            </ul>
+
+            <ul sec:authorize="!isAuthenticated()" class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/register}">Sign up</a>
+                </li>
+            </ul>
+
+            <ul sec:authorize="isAuthenticated()" class="nav navbar-nav ml-auto">
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+                        <strong sec:authentication="name"></strong>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Words manager</a>
+                        <a class="dropdown-item" href="#">Account</a>
+                        <div class="dropdown-divider"></div>
+                        <form th:action="@{/logout}" th:method="post">
+                            <input class="dropdown-item" th:type="submit" value="Log out"/>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <div id="content" layout:fragment="below-navbar-content"></div>
+
+</div>
+</body>
+</html>

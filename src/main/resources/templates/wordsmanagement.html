@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+  <link rel="stylesheet" th:href="@{css/lebrb-style.css}"/>
+  <script th:defer="true" th:src="@{https://use.fontawesome.com/releases/v5.0.6/js/all.js}"></script>
+</head>
+<body>
+  <div id="container" class="container">
+    <div th:include="fragments/navbar :: navbar"></div>
+    <div class="row">
+      <div id="menu" class="col-md-3">
+        <nav class="nav flex-column">
+          <a class="nav-link active" href="#">Words management</a>
+          <a class="nav-link" href="#">Account</a>
+        </nav>
+      </div>
+      <div id="words-manager" class="col-md-9">
+          <div class="float-right dropdown">
+            <button id="languages-dropdown" class="btn btn-light dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/de.png" />
+              <i class="fas fa-angle-double-right"></i>
+              <img src="images/pl.png" />
+            </button>
+            <div class="dropdown-menu w-100" aria-labelledby="languages-dropdown">
+              <a class="dropdown-item">
+                <img src="images/en.png" />
+                <i class="fas fa-angle-double-right"></i>
+                <img src="images/pl.png" />
+              </a>
+              <a class="dropdown-item">
+                <img src="images/en.png" />
+                <i class="fas fa-angle-double-right"></i>
+                <img src="images/pl.png" />
+              </a>
+            </div>
+          </div>
+        <h3>Statistics</h3>
+        <table id="statistics">
+          <tr>
+            <td>Known words</td>
+            <td>134</td>
+          </tr>
+          <tr>
+            <td>Total read words</td>
+            <td>523</td>
+          </tr>
+        </table>
+        <h3>Read texts</h3>
+        <table class="w-100 table">
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th>File</th>
+              <th>New words</th>
+              <th>Unique words</th>
+              <th>Total words</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td>Frosh.pdf</td>
+              <td>34</td>
+              <td>34</td>
+              <td>324</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td>Frosh.pdf</td>
+              <td>34</td>
+              <td>2</td>
+              <td>324</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td>Frosh.pdf</td>
+              <td>34</td>
+              <td>12</td>
+              <td>324</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td>Frosh.pdf</td>
+              <td>34</td>
+              <td>34</td>
+              <td>324</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+  <link rel="stylesheet" th:href="@{css/home.css}"/>
+</head>
+<body>
+  <div layout:fragment="below-navbar-content" class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mx-auto">
+          <img th:src="@{/images/home1.svg}" class="card-img-top"/>
+          <div class="card-body">
+              <p class="card-text text-center">Upload a file or paste part of text in <a href="#">one of the supported language </a>and get the list of words needed to read this. <a href="#">Try it!</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card mx-auto">
+          <img th:src="@{/images/home2.svg}" class="card-img-top"/>
+          <div class="card-body">
+            <p class="card-text text-center">Export that list to your favorite <a href="#">flashcards learning tool</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card mx-auto">
+          <img th:src="@{/images/home3.svg}" class="card-img-top"/>
+          <div class="card-body">
+            <p class="card-text text-center">After learning all words you can enjoy reading your book, newspaper, article or anything else</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
