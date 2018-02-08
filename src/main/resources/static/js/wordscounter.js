@@ -17,7 +17,7 @@ function sendFile(csrfToken, file, sourceLanguage, destinationLanguage) {
             cache: false,
             contentType: false
         }).then(function (data) {
-            sessionStorage.setItem("words", data);
+            sessionStorage.setItem("words", JSON.stringify(data));
             window.location.pathname = "/result"
         })
     });

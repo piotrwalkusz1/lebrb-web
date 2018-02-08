@@ -11,4 +11,4 @@ jwt:
   expiration: ${JWT_EXPIRATION:30}
 
 words-counter:
-  url: ${WORDSCOUNTER_URL:}
+  url: ${WORDSCOUNTER_URL:http://localhost:8081/words-counter}
