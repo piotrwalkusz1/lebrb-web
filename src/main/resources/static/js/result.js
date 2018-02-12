@@ -1,5 +1,7 @@
 function showInTable() {
     var words = JSON.parse(sessionStorage.getItem("words"));
+    $("input[name=from]").attr("value", sessionStorage.getItem("sourceLanguage"));
+    $("input[name=to]").attr("value", sessionStorage.getItem("destinationLanguage"));
     for (i in words) {
         var row = $("<tr />");
         $("tbody").append(row);
@@ -7,7 +9,7 @@ function showInTable() {
         row.append($("<td>" + words[i].ori + "</td>"));
         row.append($("<td>" + words[i].tra + "</td>"));
         row.append($("<td>" + words[i].num + "</td>"));
-        row.append($("<td><input type='checkbox' name='to-learn' value='" + words[i].lem + "'></td>"));
+        row.append($("<td><input type='checkbox' name='toLearn' value='" + words[i].lem + "'></td>"));
     }
 }
 

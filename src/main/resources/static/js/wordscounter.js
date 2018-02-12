@@ -6,6 +6,8 @@ function sendFile(csrfToken, file, sourceLanguage, destinationLanguage) {
     }).then(function (data) {
         var formData = new FormData();
         formData.append("file", file);
+        sessionStorage.setItem("sourceLanguage", sourceLanguage);
+        sessionStorage.setItem("destinationLanguage", destinationLanguage);
         $.ajax({
             url: data.url + '?from=' + sourceLanguage + '&to=' + destinationLanguage,
             method: 'POST',

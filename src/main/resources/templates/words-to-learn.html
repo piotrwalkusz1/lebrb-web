@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+</head>
+<body>
+<div layout:fragment="below-navbar-content" class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="w : ${words}">
+            <td th:text="${w.first}"></td>
+            <td th:text="${w.second}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

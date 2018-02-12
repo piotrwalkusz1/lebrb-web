@@ -5,6 +5,9 @@ spring:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://lebrb:piotr@localhost:27017/lebrb}
 
 jwt:
   secret: ${JWT_SECRET:secret}

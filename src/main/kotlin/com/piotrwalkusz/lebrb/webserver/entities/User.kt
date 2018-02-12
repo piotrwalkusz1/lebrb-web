@@ -1,12 +1,9 @@
 package com.piotrwalkusz.lebrb.webserver.entities
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity(name = "users")
-data class User(
+class User(
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,5 +15,9 @@ data class User(
 
     val password: String = "",
 
-    val enabled: Boolean = true
+    val enabled: Boolean = true,
+
+    @OneToMany(mappedBy = "user")
+    @OrderBy("creationTime")
+    val wordsToLearn: List<WordsToLearn> = mutableListOf()
 )

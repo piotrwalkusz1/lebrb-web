@@ -46,6 +46,8 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url "https://raw.githubusercontent.com/piotrwalkusz1/lebrb-repository/master/releases" }
+    maven { url "https://raw.githubusercontent.com/piotrwalkusz1/lebrb-repository/master/snapshots" }
 }
 
 dependencies {
@@ -60,11 +62,13 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.3.RELEASE'
+    compile (group: 'com.piotrwalkusz.lebrb', name: 'lebrb-lanlearn-dictionaries', version: '1.1.0')
     runtime('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
     integrationCompile group: 'info.cukes', name: 'cucumber-spring', version: '1.2.5'
     integrationCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
 }
 
 idea {
