@@ -5,9 +5,10 @@ import java.time.Instant
 import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.NotNull
+import kotlin.collections.ArrayList
 
-@Entity
-class WordsToLearn(
+@Entity(name = "WordsBatches")
+class WordsBatch(
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)

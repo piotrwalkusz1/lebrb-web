@@ -20,7 +20,7 @@ function sendFile(csrfToken, file, sourceLanguage, destinationLanguage) {
             contentType: false
         }).then(function (data) {
             sessionStorage.setItem("words", JSON.stringify(data));
-            window.location.pathname = "/result"
+            window.location.pathname = "/wordscounter/result"
         })
     });
 }

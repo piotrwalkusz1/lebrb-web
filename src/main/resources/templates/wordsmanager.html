@@ -14,13 +14,15 @@
                     <th>From</th>
                     <th>To</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="w,iter : ${wordsToLearn}">
+                <tr th:each="w,iter : ${wordsBatches}">
                     <td th:text="${w.words.size()}"></td>
                     <td th:text="${w.sourceLanguage}"></td>
                     <td th:text="${w.destinationLanguage}"></td>
+                    <td><a th:href="@{'/wordsmanager/' + ${iter.index}}"><i class="fas fa-pencil-alt"></i></a></td>
                     <td><input name="wordsToLearnIndices[]" type="checkbox" th:value="${iter.index}" /></td>
                 </tr>
             </tbody>

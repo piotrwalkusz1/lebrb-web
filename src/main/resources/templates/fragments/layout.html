@@ -23,7 +23,7 @@
                     <a class="nav-link" th:href="@{/wordscounter}">Try it</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Learn more</a>
+                    <a class="nav-link" th:href="@{/learnmore}">Learn more</a>
                 </li>
             </ul>
 
@@ -43,7 +43,7 @@
                         <strong sec:authentication="name"></strong>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Words manager</a>
+                        <a class="dropdown-item" th:href="@{/wordsmanager}">Words manager</a>
                         <a class="dropdown-item" href="#">Account</a>
                         <div class="dropdown-divider"></div>
                         <form th:action="@{/logout}" th:method="post">

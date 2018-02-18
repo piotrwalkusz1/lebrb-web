@@ -2,7 +2,7 @@ package com.piotrwalkusz.lebrb.webserver.entities
 
 import javax.persistence.*
 
-@Entity(name = "users")
+@Entity(name = "Users")
 class User(
 
     @Id
@@ -19,5 +19,5 @@ class User(
 
     @OneToMany(mappedBy = "user")
     @OrderBy("creationTime")
-    val wordsToLearn: List<WordsToLearn> = mutableListOf()
+    val wordsBatches: List<WordsBatch> = mutableListOf()
 )

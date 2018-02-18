@@ -3,10 +3,11 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="fragments/layout">
 <head>
-    <script th:src="@{js/result.js}"></script>
+    <script th:src="@{/js/result.js}"></script>
 </head>
 <body>
 <div layout:fragment="below-navbar-content" class="container">
+    <div id="knownWords" hidden="hidden" th:text="${knownWords}"></div>
     <form th:action="@{/wordsmanager/add-to-learn}" th:method="post">
         <table class="table">
             <thead>
